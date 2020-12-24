@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/splash">
+
+
+    <argument android:name="@string/ML_TutorialId"
+        android:defaultValue="0"/>
+
+    <fragment
+        android:id="@+id/splash"
+        android:name="ir.bppir.allin4sat.views.fragments.Splash"
+        android:label="Splash"
+        tools:layout="@layout/fragment_splash">
+
+        <argument android:name="@string/ML_personId"
+            android:defaultValue="0"/>
+
+        <argument android:name="@string/ML_Type"
+            android:defaultValue="0"/>
+
+        <argument android:name="@string/ML_UpdateUrl"/>
+
+        <argument android:name="@string/ML_UpdateFile"/>
+
+        <action
+            android:id="@+id/action_splash_to_signUp"
+            app:destination="@id/signUp"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_splash_to_home"
+            app:destination="@id/home"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_splash_to_policyType"
+            app:destination="@id/policyType"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_splash_to_appUpdate"
+            app:destination="@id/appUpdate"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUp"
+        android:name="ir.bppir.allin4sat.views.fragments.SignUp"
+        android:label="SignUp"
+        tools:layout="@layout/fragment_signup">
+
+        <argument android:name="@string/ML_PhoneNumber"
+            android:defaultValue="null"/>
+
+        <action
+            android:id="@+id/action_signUp_to_verify"
+            app:destination="@id/verify"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/verify"
+        android:name="ir.bppir.allin4sat.views.fragments.Verify"
+        android:label="Verify"
+        tools:layout="@layout/fragment_verify"
+        />
+
+    <fragment
+        android:id="@+id/home"
+        android:name="ir.bppir.allin4sat.views.fragments.Home"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+
+        <argument android:name="@string/ML_PanelType"
+            android:defaultValue="0"/>
+
+        <argument android:name="@string/ML_Type"
+            android:defaultValue="0"/>
+
+        <action
+            android:id="@+id/action_home_to_panel"
+            app:destination="@id/panel"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+
+        <action
+            android:id="@+id/action_home_to_post"
+            app:destination="@id/post"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_home_to_reports"
+            app:destination="@id/reports"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+
+        <action
+            android:id="@+id/action_home_to_notification"
+            app:destination="@id/notification"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+    </fragment>
+
+
+
+
+
+    <fragment
+        android:id="@+id/panel"
+        android:name="ir.bppir.allin4sat.views.fragments.Panel"
+        android:label="Panel"
+        tools:layout="@layout/fragment_panel"
+        >
+
+        <argument android:name="@string/ML_PanelType"
+            android:defaultValue="0"/>
+
+        <argument android:name="@string/ML_personId"
+            android:defaultValue="0"/>
+
+        <argument android:name="@string/ML_Type"
+            android:defaultValue="0"/>
+
+        <argument android:name="@string/ML_Name"/>
+
+        <action
+            android:id="@+id/action_panel_to_addPerson"
+            app:destination="@id/addPerson"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_panel_to_editPerson"
+            app:destination="@id/editPerson"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            />
+
+        <action
+            android:id="@+id/action_panel_to_policies"
+            app:destination="@id/policies"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_panel_to_policyType"
+            app:destination="@id/policyType"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_panel_to_reminder"
+            app:destination="@id/reminder"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/addPerson"
+        android:name="ir.bppir.allin4sat.views.fragments.AddPerson"
+        android:label="AddPerson"
+        tools:layout="@layout/fragment_add_person"/>
+
+    <fragment
+        android:id="@+id/editPerson"
+        android:name="ir.bppir.allin4sat.views.fragments.EditPerson"
+        android:label="EditPerson"
+        tools:layout="@layout/fragment_edit_person">
+
+        <action
+            android:id="@+id/action_editPerson_to_map"
+            app:destination="@id/map"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="ir.bppir.allin4sat.views.fragments.Map"
+        android:label="Map"
+        tools:layout="@layout/fragment_map"/>
+
+    <fragment
+        android:id="@+id/policyType"
+        android:name="ir.bppir.allin4sat.views.fragments.PolicyType"
+        android:label="PolicyType"
+        tools:layout="@layout/fragment_policy_type"/>
+
+    <fragment
+        android:id="@+id/policies"
+        android:name="ir.bppir.allin4sat.views.fragments.Policies"
+        android:label="Policies"
+        tools:layout="@layout/fragment_policy_list">
+
+        <argument android:name="@string/ML_personId"
+            android:defaultValue="0"/>
+
+        <argument android:name="@string/ML_Type"
+            android:defaultValue="0"/>
+
+        <argument android:name="ML_Id"
+            android:defaultValue="0"/>
+
+        <argument android:name="@string/ML_Amount"
+            android:defaultValue="0"/>
+
+        <argument android:name="@string/ML_Description"
+            android:defaultValue="null"/>
+
+        <argument android:name="@string/ML_Date"
+            android:defaultValue="null"/>
+
+        <action
+            android:id="@+id/action_policies_to_policyType"
+            app:destination="@id/policyType"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/report"
+        android:name="ir.bppir.allin4sat.views.fragments.Report"
+        android:label="Report"
+        tools:layout="@layout/fragment_report"/>
+
+    <fragment
+        android:id="@+id/tutorial"
+        android:name="ir.bppir.allin4sat.views.fragments.Tutorial"
+        android:label="Tutorial"
+        tools:layout="@layout/fragment_tutorial">
+
+        <argument android:name="ML_Id"
+            android:defaultValue="0"/>
+
+        <action
+            android:id="@+id/action_tutorial_to_tutorialMovie"
+            app:destination="@id/tutorialMovie"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+
+        <action
+            android:id="@+id/action_tutorial_to_examResults"
+            app:destination="@id/examResults"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/tutorialMovie"
+        android:name="ir.bppir.allin4sat.views.fragments.TutorialMovie"
+        android:label="TutorialMovie"
+        tools:layout="@layout/fragment_tutorial_movie">
+
+        <argument android:name="ML_Id"
+            android:defaultValue="0"/>
+
+        <argument android:name="ML_questionTime"
+            android:defaultValue="0"/>
+
+        <argument android:name="@string/ML_MovieUrl"
+            android:defaultValue="null"/>
+
+        <action
+            android:id="@+id/action_tutorialMovie_to_moviePlayer"
+            app:destination="@id/moviePlayer"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_tutorialMovie_to_quiz"
+            app:destination="@id/quiz"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_tutorialMovie_to_examResults"
+            app:destination="@id/examResults"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/quiz"
+        android:name="ir.bppir.allin4sat.views.fragments.Quiz"
+        android:label="Quiz"
+        tools:layout="@layout/fragment_quiz">
+
+        <argument android:name="@string/ML_MovieUrl"
+            android:defaultValue="null"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/moviePlayer"
+        android:name="ir.bppir.allin4sat.views.fragments.MoviePlayer"
+        android:label="MoviePlayer"
+        tools:layout="@layout/fragment_movie_player"/>
+
+    <fragment
+        android:id="@+id/post"
+        android:name="ir.bppir.allin4sat.views.fragments.Post"
+        android:label="Post"
+        tools:layout="@layout/fragment_post">
+
+        <argument android:name="ML_Id"
+            android:defaultValue="0"/>
+
+        <argument android:name="ML_questionTime"
+            android:defaultValue="0"/>
+
+        <argument android:name="@string/ML_MovieUrl"
+            android:defaultValue="null"/>
+
+        <argument android:name="@string/ML_Type"
+            android:defaultValue="null"/>
+
+
+        <action
+            android:id="@+id/action_post_to_tutorial"
+            app:destination="@id/tutorial"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_post_to_tutorialMovie"
+            app:destination="@id/tutorialMovie"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            />
+
+        <action
+            android:id="@+id/action_post_to_examResults"
+            app:destination="@id/examResults"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+
+
+        <action
+            android:id="@+id/action_post_to_exam"
+            app:destination="@id/exam"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+
+
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/exam"
+        android:name="ir.bppir.allin4sat.views.fragments.Exam"
+        android:label="Exam"
+        tools:layout="@layout/fragment_exam">
+
+        <action
+            android:id="@+id/action_exam_to_tutorial"
+            app:destination="@id/tutorial"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/examResults"
+        android:name="ir.bppir.allin4sat.views.fragments.ExamResults"
+        android:label="ExamResults"
+        tools:layout="@layout/fragment_exam_results">
+
+        <action
+            android:id="@+id/action_examResults_to_examResultDetails"
+            app:destination="@id/examResultDetails"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/examResultDetails"
+        android:name="ir.bppir.allin4sat.views.fragments.ExamResultDetails"
+        android:label="ExamResultDetails"
+        tools:layout="@layout/fragment_exam_result_details"/>
+
+    <fragment
+        android:id="@+id/appUpdate"
+        android:name="ir.bppir.allin4sat.views.fragments.AppUpdate"
+        android:label="AppUpdate"
+        tools:layout="@layout/fragment_update"/>
+
+    <fragment
+        android:id="@+id/examReport"
+        android:name="ir.bppir.allin4sat.views.fragments.ExamReport"
+        android:label="ExamReport"
+        tools:layout="@layout/fragment_exam_report">
+
+        <action
+            android:id="@+id/action_examReport_to_post"
+            app:destination="@id/post"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/reports"
+        android:name="ir.bppir.allin4sat.views.fragments.Reports"
+        android:label="Reports"
+        tools:layout="@layout/fragment_reports">
+
+        <action
+            android:id="@+id/action_reports_to_report"
+            app:destination="@id/report"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            />
+
+
+        <action
+            android:id="@+id/action_reports_to_examReport"
+            app:destination="@id/examReport"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+        <action
+            android:id="@+id/action_reports_to_reportGrid"
+            app:destination="@id/reportGrid"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/reportGrid"
+        android:name="ir.bppir.allin4sat.views.fragments.ReportGrid"
+        android:label="ReportGrid"
+        tools:layout="@layout/fr_report_grid"/>
+
+    <fragment
+        android:id="@+id/payment"
+        android:name="ir.bppir.allin4sat.views.fragments.Payment"
+        tools:layout="@layout/fragment_payment"
+        android:label="Payment"/>
+
+    <action
+        android:id="@+id/gotoPayment"
+        app:destination="@id/payment"
+        app:launchSingleTop="true"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left"/>
+
+
+    <action
+        android:id="@+id/gotoEditUser"
+        app:destination="@id/editPerson"
+        app:launchSingleTop="true"
+        app:enterAnim="@anim/slide_in_left"
+        app:exitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_left"/>
+
+
+    <fragment
+        android:id="@+id/reminder"
+        android:name="ir.bppir.allin4sat.views.fragments.Reminder"
+        android:label="Reminder"
+        tools:layout="@layout/fragment_reminder"/>
+
+
+    <fragment
+        android:id="@+id/notification"
+        android:name="ir.bppir.allin4sat.views.fragments.Notifications"
+        android:label="Notification"
+        tools:layout="@layout/notifications">
+
+        <argument android:name="@string/ML_Title"/>
+        <argument android:name="@string/ML_Description"/>
+        <argument android:name="@string/ML_ImageUrl"/>
+        <argument android:name="@string/ML_Date"/>
+
+        <action
+            android:id="@+id/action_notifications_to_detail"
+            app:destination="@id/detailNotification"
+            app:launchSingleTop="true"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/detailNotification"
+        android:name="ir.bppir.allin4sat.views.fragments.DetailNotification"
+        tools:layout="@layout/notification_detail"
+        android:label="detailNotification"/>
+
+</navigation>

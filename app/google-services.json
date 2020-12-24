@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "751882689624",
+    "project_id": "allin4sat",
+    "storage_bucket": "allin4sat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751882689624:android:9bcfd0d5f7240e82eb7e2d",
+        "android_client_info": {
+          "package_name": "ir.bppir.allin4sat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751882689624-86vi9s96f5kvev89djpsh443gce4uuis.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfU210nfPKnzaKuAAYU7aaUxO70RiHxv4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751882689624-86vi9s96f5kvev89djpsh443gce4uuis.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

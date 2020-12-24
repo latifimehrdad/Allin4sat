@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="payment"
+            type="ir.bppir.allin4sat.viewmodels.fragments.VM_Payment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPayment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutPay" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_35sdp"
+                android:gravity="center"
+                android:background="@drawable/dw_back_bottom"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingBottom="@dimen/_3sdp">
+
+
+                <TextView
+                    fontPath="fonts/iransans_web_medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_13sdp"
+                    android:text="@string/Payment"
+                    android:textColor="@color/ML_White"
+                    android:textSize="@dimen/_12sdp" />
+
+                <ImageView
+                    android:id="@+id/imgProgress"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:src="@drawable/ic_wallet"
+                    android:tint="@color/ML_Harmony" />
+
+                <com.cunoraz.gifview.library.GifView
+                    android:id="@+id/ProgressGif"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:visibility="gone"
+                    custom:gif="@drawable/loading3" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/editTextAmount"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dw_verify_edit"
+                android:gravity="center"
+                android:hint="@string/AmountT"
+                android:inputType="number"
+                android:maxLines="1"
+                android:minWidth="@dimen/_25sdp"
+                android:minHeight="@dimen/_30sdp"
+                android:padding="@dimen/_2sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="@={payment.amount}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                fontPath="fonts/iransans_web_medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:text="@string/chargeWallet"/>
+
+        </LinearLayout>
+
+
+        <com.cunoraz.gifview.library.GifView
+            android:id="@+id/gifViewLoading"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/dw_choose_current_map"
+            android:padding="@dimen/_5sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            custom:gif="@drawable/loading3" />
+
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/textViewNothing"
+            fontPath="fonts/iransans_web_medium.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/EmptyList"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

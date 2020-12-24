@@ -1,0 +1,169 @@
+package ir.bppir.allin4sat.viewmodels.fragments;
+
+import android.app.Activity;
+
+import java.util.List;
+
+import ir.bppir.allin4sat.models.MD_Answer;
+import ir.bppir.allin4sat.models.MD_Question;
+import ir.bppir.allin4sat.models.MD_SendAnswer;
+import ir.bppir.allin4sat.models.MR_Exam;
+import ir.bppir.allin4sat.models.MR_ExamResult;
+import ir.bppir.allin4sat.models.MR_Question;
+import ir.bppir.allin4sat.utility.StaticValues;
+import ir.bppir.allin4sat.viewmodels.VM_Primary;
+import ir.bppir.allin4sat.views.application.PishtazanApplication;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class VM_Quiz extends VM_Primary {
+
+
+    private MR_Exam mr_exam;
+    private List<MD_Question> md_questions;
+    private Integer examResult;
+
+
+    //______________________________________________________________________________________________ VM_Quiz
+    public VM_Quiz(Activity activity) {
+        setContext(activity);
+    }
+    //______________________________________________________________________________________________ VM_Quiz
+
+
+    //______________________________________________________________________________________________ getExam
+    public void getExam(Integer quizId) {
+
+        setPrimaryCall(PishtazanApplication
+                .getApplication(getContext())
+                .getRetrofitComponent()
+                .getRetrofitApiInterface()
+                .GET_EXAM(quizId));
+
+        getPrimaryCall().enqueue(new Callback<MR_Exam>() {
+            @Override
+            public void onResponse(Call<MR_Exam> call, Response<MR_Exam> response) {
+                if (responseIsOk(response)) {
+                    setResponseMessage(response.body().getMessage());
+                    if (response.body().getStatue() == 0)
+                        getPublishSubject().onNext(StaticValues.ML_ResponseError);
+                    else {
+                        mr_exam = response.body();
+                        getPublishSubject().onNext(StaticValues.ML_GetExam);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<MR_Exam> call, Throwable t) {
+                callIsFailure();
+            }
+        });
+
+
+    }
+    //______________________________________________________________________________________________ getExam
+
+
+    //______________________________________________________________________________________________ getQuestion
+    public void getQuestion(Integer quizId) {
+
+        Integer UserInfoId = getUserId();
+        if (UserInfoId == 0) {
+            userIsNotAuthorization();
+            return;
+        }
+
+        setPrimaryCall(PishtazanApplication
+                .getApplication(getContext())
+                .getRetrofitComponent()
+                .getRetrofitApiInterface()
+                .GET_QUESTION(quizId, UserInfoId));
+
+        getPrimaryCall().enqueue(new Callback<MR_Question>() {
+            @Override
+            public void onResponse(Call<MR_Question> call, Response<MR_Question> response) {
+                if (responseIsOk(response)) {
+                    setResponseMessage(response.body().getMessage());
+                    if (response.body().getStatue() == 0)
+                        getPublishSubject().onNext(StaticValues.ML_ResponseError);
+                    else {
+                        md_questions = response.body().getQuestions();
+                        examResult = response.body().getExamResultId();
+                        getPublishSubject().onNext(StaticValues.ML_GetQuestions);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<MR_Question> call, Throwable t) {
+                callIsFailure();
+            }
+        });
+
+    }
+    //______________________________________________________________________________________________ getQuestion
+
+
+    //______________________________________________________________________________________________ sendAnswer
+    public void sendAnswer(List<MD_Answer> answers, Integer examResult) {
+
+        Integer UserInfoId = getUserId();
+        if (UserInfoId == 0) {
+            userIsNotAuthorization();
+            return;
+        }
+
+        MD_SendAnswer md_sendAnswer = new MD_SendAnswer(UserInfoId, examResult, answers);
+        setPrimaryCall(PishtazanApplication
+                .getApplication(getContext())
+                .getRetrofitComponent()
+                .getRetrofitApiInterface()
+                .SEND_ANSWER(md_sendAnswer));
+
+        getPrimaryCall().enqueue(new Callback<MR_ExamResult>() {
+            @Override
+            public void onResponse(Call<MR_ExamResult> call, Response<MR_ExamResult> response) {
+                if (responseIsOk(response)) {
+                    setResponseMessage(response.body().getMessage());
+                    if (response.body().getStatue() == 0)
+                        getPublishSubject().onNext(StaticValues.ML_ResponseError);
+                    else {
+                        getPublishSubject().onNext(StaticValues.ML_SendAnswer);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<MR_ExamResult> call, Throwable t) {
+                callIsFailure();
+            }
+        });
+
+
+    }
+    //______________________________________________________________________________________________ sendAnswer
+
+
+    //______________________________________________________________________________________________ getMr_exam
+    public MR_Exam getMr_exam() {
+        return mr_exam;
+    }
+    //______________________________________________________________________________________________ getMr_exam
+
+
+    //______________________________________________________________________________________________ getMd_questions
+    public List<MD_Question> getMd_questions() {
+        return md_questions;
+    }
+    //______________________________________________________________________________________________ getMd_questions
+
+
+    //______________________________________________________________________________________________ getExamResult
+    public Integer getExamResult() {
+        return examResult;
+    }
+    //______________________________________________________________________________________________ getExamResult
+
+}

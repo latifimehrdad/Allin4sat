@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:orientation="horizontal"
+        android:background="@drawable/dw_back_bottom_connection"
+        android:padding="@dimen/_7sdp"
+        >
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutUser"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+            <TextView
+                fontPath="fonts/iransans_web_medium.ttf"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textColor="@color/ML_HarmonyDark"
+                android:textSize="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="@string/User"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutCertain"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+            <TextView
+                fontPath="fonts/iransans_web_medium.ttf"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textColor="@color/ML_HarmonyDark"
+                android:textSize="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="@string/Certain"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutPossible"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                fontPath="fonts/iransans_web_medium.ttf"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textColor="@color/ML_HarmonyDark"
+                android:textSize="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="@string/Possible"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutMaybe"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/dw_back_recycler"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                fontPath="fonts/iransans_web_medium.ttf"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textColor="@color/ML_HarmonyDark"
+                android:textSize="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="@string/Maybe"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|right"
+        android:padding="@dimen/_4sdp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="right"
+            android:layout_weight="0.7">
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/SwitchMaterialArchived"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:textSize="@dimen/_9sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:text="@string/Archived"/>
+
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchMaterialSort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:textSize="@dimen/_9sdp"
+                android:text="@string/sortByLevel"/>
+
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/_10sdp"
+            android:gravity="right"
+            android:hint="@string/SearchName"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
